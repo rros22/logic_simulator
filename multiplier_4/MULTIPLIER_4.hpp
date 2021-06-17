@@ -1,0 +1,92 @@
+#ifndef MULTIPLIER_4_HPP
+#define MULTIPLIER_4_HPP
+
+
+#include "../full_adder/FULL_ADDER.hpp"
+#include "../half_adder/HALF_ADDER.hpp"
+
+
+class MULTIPLIER_4: public COMPONENT{
+
+public:
+
+  std::vector<BUFFER*> output_list;
+
+  //true reference
+  OUTPUT_PORT PORT_1;
+
+  //inputs
+  I_BUFFER INPUT_BUFFER_X0;
+  I_BUFFER INPUT_BUFFER_X1;
+  I_BUFFER INPUT_BUFFER_X2;
+  I_BUFFER INPUT_BUFFER_X3;
+
+  I_BUFFER INPUT_BUFFER_Y0;
+  I_BUFFER INPUT_BUFFER_Y1;
+  I_BUFFER INPUT_BUFFER_Y2;
+  I_BUFFER INPUT_BUFFER_Y3;
+
+
+  //outputs
+  BUFFER OUTPUT_BUFFER_Z0;
+  BUFFER OUTPUT_BUFFER_Z1;
+  BUFFER OUTPUT_BUFFER_Z2;
+  BUFFER OUTPUT_BUFFER_Z3;
+  BUFFER OUTPUT_BUFFER_Z4;
+  BUFFER OUTPUT_BUFFER_Z5;
+  BUFFER OUTPUT_BUFFER_Z6;
+  BUFFER OUTPUT_BUFFER_Z7;
+
+
+  //adders
+  HALF_ADDER HA_0;
+  FULL_ADDER FA_1;
+  FULL_ADDER FA_2;
+  FULL_ADDER FA_3;
+
+  HALF_ADDER HA_4;
+  FULL_ADDER FA_5;
+  FULL_ADDER FA_6;
+  FULL_ADDER FA_7;
+
+  HALF_ADDER HA_8;
+  FULL_ADDER FA_9;
+  FULL_ADDER FA_10;
+  FULL_ADDER FA_11;
+  HALF_ADDER HA_12;
+
+  //gates
+  AND AND_0;
+  AND AND_1;
+  AND AND_2;
+  NAND NAND_3;
+
+  AND AND_4;
+  AND AND_5;
+  AND AND_6;
+  NAND NAND_7;
+
+  AND AND_8;
+  AND AND_9;
+  AND AND_10;
+  NAND NAND_11;
+
+  NAND NAND_12;
+  NAND NAND_13;
+  NAND NAND_14;
+  AND AND_15;
+
+
+  //update function
+  void update_output(std::queue<COMPONENT*> &external_update_queue);
+
+  //constructor
+  MULTIPLIER_4();
+
+};
+
+
+
+
+
+#endif
